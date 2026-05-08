@@ -1,0 +1,22 @@
+---
+const { casino, index = 1 } = Astro.props;
+---
+<article class="casino-card">
+  <div class="rank">#{index}</div>
+  <div class="casino-logo">{casino.name.slice(0,2)}</div>
+  <div class="casino-main">
+    <h3>{casino.name}</h3>
+    <p>{casino.bonus}</p>
+    <div class="tags">
+      {casino.tags.map((tag) => <span>{tag}</span>)}
+    </div>
+  </div>
+  <div class="rating">
+    <strong>{casino.rating}</strong>
+    <span>/10</span>
+  </div>
+  <div class="payments">
+    {casino.payments.map((p) => <small>{p}</small>)}
+  </div>
+  <a class="button" href={casino.url} rel="nofollow sponsored">Bonus holen</a>
+</article>

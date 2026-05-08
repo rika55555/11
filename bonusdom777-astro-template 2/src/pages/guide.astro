@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CasinoCard from '../components/CasinoCard.astro';
+import { casinos } from '../data/casinos.js';
+---
+<BaseLayout title="Bonusdom777 – Casino Guide">
+  <section class="subhero">
+    <span class="eyebrow">Bonusdom777</span>
+    <h1>Casino Guide</h1>
+    <p>SEO Landing Page Template. Du kannst diesen Text später für Deutschland, Österreich oder andere GEOs umschreiben.</p>
+  </section>
+  <section class="section casino-list">
+    {casinos.map((casino, i) => <CasinoCard casino={casino} index={i + 1} />)}
+  </section>
+</BaseLayout>

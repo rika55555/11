@@ -1,0 +1,46 @@
+---
+const { title = 'Bonusdom777 – Beste Online Casino Boni', description = 'Bonusdom777 vergleicht Casino Boni, Freispiele und sichere Online Casinos für Deutschland.' } = Astro.props;
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="site-header">
+      <a class="logo" href="/"><span>Bonusdom</span>777</a>
+      <nav>
+        <a href="/casinos">Casinos</a>
+        <a href="/bonus">Bonus</a>
+        <a href="/freispiele">Freispiele</a>
+        <a href="/guide">Guide</a>
+      </nav>
+      <a class="header-cta" href="/casinos">Top Casinos</a>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="footer">
+      <div>
+        <strong>Bonusdom777</strong>
+        <p>Vergleiche Boni, Bewertungen und sichere Anbieter. Glücksspiel kann süchtig machen. 18+.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/guide">Ratgeber</a>
+      </div>
+    </footer>
+  </body>
+</html>

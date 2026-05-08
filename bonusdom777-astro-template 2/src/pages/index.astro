@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CasinoCard from '../components/CasinoCard.astro';
+import { casinos, categories } from '../data/casinos.js';
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Casino Bonus Vergleich 2026</div>
+      <h1>Die besten Online Casino Boni auf einen Blick</h1>
+      <p>Bonusdom777 sammelt starke Casino Angebote, Freispiele und seriöse Anbieter in einem schnellen, klaren Vergleich für deutsche Spieler.</p>
+      <div class="hero-actions">
+        <a class="button big" href="#top-casinos">Top Casinos ansehen</a>
+        <a class="button ghost big" href="/guide">Bonus Guide lesen</a>
+      </div>
+      <div class="trust-row">
+        <span>18+</span><span>SEO-ready</span><span>Mobile first</span><span>Fast static</span>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="glow-card">
+        <span class="badge">Bonus des Monats</span>
+        <h2>100% bis zu 500€</h2>
+        <p>+ 200 Freispiele für neue Spieler</p>
+        <a class="button" href="#top-casinos">Jetzt vergleichen</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="top-casinos" class="section">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Ranking</span>
+        <h2>Beste Online Casinos</h2>
+      </div>
+      <p>Sortiert nach Bonus, Auszahlung, UX, Mobile Experience und Transparenz.</p>
+    </div>
+    <div class="casino-list">
+      {casinos.map((casino, i) => <CasinoCard casino={casino} index={i + 1} />)}
+    </div>
+  </section>
+
+  <section class="section grid-two">
+    <div class="content-card">
+      <span class="eyebrow">Kategorien</span>
+      <h2>Casino Themen für SEO-Seiten</h2>
+      <div class="category-grid">
+        {categories.map((cat) => <a href="/casinos">{cat}</a>)}
+      </div>
+    </div>
+    <div class="content-card purple">
+      <span class="eyebrow">Warum Bonusdom777?</span>
+      <h2>Schnell, clean, ohne WordPress-Ballast</h2>
+      <p>Dieses Template ist statisch, dadurch lädt es extrem schnell und braucht keine Plugins, Datenbank oder komplizierte Wartung.</p>
+      <ul>
+        <li>Perfekt für Affiliate Landing Pages</li>
+        <li>Einfacher Content in Astro-Dateien</li>
+        <li>Bereit für Vercel, Netlify oder Cloudflare Pages</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section seo-text">
+    <h2>Online Casino Boni vergleichen</h2>
+    <p>Ein guter Casino Bonus ist nicht nur hoch, sondern auch fair. Achte auf Umsatzbedingungen, Auszahlungslimits, erlaubte Spiele und die Dauer der Aktion. Bonusdom777 hilft dabei, Angebote klar zu vergleichen und schneller zu entscheiden, welcher Anbieter zu deiner Spielweise passt.</p>
+    <div class="faq">
+      <details open>
+        <summary>Was ist ein Casino Bonus?</summary>
+        <p>Ein Casino Bonus ist ein Angebot für neue oder bestehende Spieler, zum Beispiel ein Match Bonus, Freispiele oder Cashback.</p>
+      </details>
+      <details>
+        <summary>Sind Freispiele ohne Einzahlung sinnvoll?</summary>
+        <p>Ja, aber nur wenn die Bedingungen fair sind. Prüfe immer Umsatzbedingungen und Auszahlungslimits.</p>
+      </details>
+      <details>
+        <summary>Ist das Template SEO-freundlich?</summary>
+        <p>Ja. Es ist statisch, schnell, mobil optimiert und hat saubere HTML-Struktur.</p>
+      </details>
+    </div>
+  </section>
+</BaseLayout>
